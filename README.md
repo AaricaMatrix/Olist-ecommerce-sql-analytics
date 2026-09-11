@@ -1,28 +1,31 @@
 # Olist E-Commerce Sales & Customer Analytics
 
-A PostgreSQL and SQL analytics project using the **Brazilian E-Commerce Public Dataset by Olist** to analyze orders, customers, products, sellers, payments, reviews, and delivery performance.
+A PostgreSQL and SQL analytics project built using the **Brazilian E-Commerce Public Dataset by Olist**.
 
-## 📌 Project Overview
+The project analyzes approximately 100K orders and related customer, product, seller, payment, review, delivery, and geographic data to answer practical business questions.
 
-This project uses PostgreSQL to transform a large e-commerce dataset into meaningful business insights.
+## 🎯 Project Objective
 
-The analysis will focus on:
+The objective is to transform raw e-commerce transaction data into actionable business insights using SQL.
+
+Key analysis areas include:
 
 - 📈 Sales and revenue trends
 - 🛍️ Product and category performance
 - 🏆 Seller performance
-- 👥 Customer behavior
+- 👥 Customer behavior and repeat purchasing
 - 💳 Payment methods and installments
 - 🚚 Delivery performance
-- ⭐ Customer reviews
-- 🌎 Geographic order distribution
+- ⭐ Customer review analysis
+- 🌎 Geographic performance
+- 📊 Advanced SQL analytics
 
 ## 🛠️ Tech Stack
 
-- **Database:** PostgreSQL
-- **SQL Tool:** pgAdmin 4
-- **Version Control:** Git & GitHub
-- **Dataset:** Brazilian E-Commerce Public Dataset by Olist
+- **PostgreSQL**
+- **pgAdmin 4**
+- **SQL**
+- **Git & GitHub**
 
 ## 🗄️ Database Structure
 
@@ -40,7 +43,7 @@ geolocation
 product_category_translation
 ```
 
-Main relationships:
+### Main Relationships
 
 ```text
 CUSTOMERS
@@ -64,13 +67,13 @@ GEOLOCATION
 
 ## 📊 Database Overview
 
-The PostgreSQL database and all 9 tables were successfully created and populated.
+The PostgreSQL database was created and populated with the Olist dataset.
 
 ![Database Overview](screenshots/database_overview.png)
 
 ## ✅ Data Validation
 
-The imported data was validated by checking the row count of every table.
+All 9 tables were loaded and validated using PostgreSQL row-count checks.
 
 ![Database Validation](screenshots/database_validation.png)
 
@@ -90,62 +93,109 @@ The imported data was validated by checking the row count of every table.
 
 ### Order Status Distribution
 
-The first analysis groups orders by their current status to understand the overall order lifecycle.
+Orders were grouped by status to understand the order lifecycle.
 
 ![Order Status Analysis](screenshots/order_status_analysis.png)
 
 ### Orders by Customer State
 
-A SQL JOIN between `customers` and `orders` was used to analyze order volume across Brazilian states.
+A JOIN between `customers` and `orders` was used to analyze order volume across Brazilian states.
 
 ![Orders by Customer State](screenshots/orders_by_state.png)
 
-## 📈 Planned Analysis
-
-The project will be developed further with the following analysis:
+## 📈 Business Analysis
 
 ### Sales & Revenue
-- Total revenue
-- Monthly revenue trends
+- Total product revenue
+- Freight value
 - Average order value
-- Revenue by product category
-- Revenue by state
+- Monthly revenue trends
+- Monthly order trends
+- Revenue growth
 
-### Product & Seller Analysis
-- Top-selling products
+### Product & Category
+- Revenue by category
 - Top revenue-generating categories
-- Top-performing sellers
-- Seller order volume
+- Top products
+- Units sold by category
 
-### Customer Analysis
+### Seller Performance
+- Top sellers by revenue
+- Top sellers by order volume
+- Seller performance by state
+- Seller revenue concentration
+
+### Customer Analytics
 - Unique customers
-- Repeat customers
-- Customer order frequency
-- Customer distribution by state
+- Orders per customer
+- Repeat customer rate
+- Customer revenue
+- Customer segmentation
+- Customer ranking
+- Customer revenue concentration
+- Cohort-style analysis
 
-### Payment Analysis
-- Most-used payment methods
-- Revenue by payment type
-- Installment analysis
+### Payment Analytics
+- Payment method usage
+- Payment value share
+- Installment distribution
+- Average payment value
 
-### Delivery Analysis
+### Delivery Analytics
 - Average delivery time
-- On-time vs late deliveries
+- On-time vs late delivery
+- Average days vs estimated delivery
 - Delivery performance by state
-- Estimated vs actual delivery
+- Delivery-time buckets
 
-### Review Analysis
+### Review Analytics
 - Review score distribution
 - Average review score
-- Review score vs delivery performance
+- Review score vs delivery status
+- Category-level review performance
 
-### Advanced SQL
-- CTEs
+### Geographic Analytics
+- Orders by customer state
+- Revenue by customer state
+- Seller revenue by state
+
+## 🧠 Advanced SQL Techniques
+
+The project demonstrates:
+
+- `JOIN`
+- `GROUP BY`
+- Aggregate functions
+- `CASE`
+- `FILTER`
+- Common Table Expressions (CTEs)
+- `LAG()`
+- `RANK()`
+- `DENSE_RANK()`
+- `NTILE()`
 - Window functions
-- Ranking
+- Cumulative revenue
+- Revenue share
 - Customer segmentation
-- Cohort analysis
+- Cohort-style analysis
+- Percentiles
 - Analytical views
+- Data-quality checks
+
+## 📊 Key KPI Framework
+
+The project tracks core e-commerce KPIs including:
+
+- Total orders
+- Unique customers
+- Product revenue
+- Freight value
+- Average order value
+- Average review score
+- Delivered orders
+- On-time delivery rate
+- Repeat customer rate
+- Revenue concentration
 
 ## 📁 Repository Structure
 
@@ -157,7 +207,9 @@ Olist_Ecommerce_SQL_Project/
 │
 ├── sql/
 │   ├── 01_create_tables.sql
-│   └── 02_analysis_queries.sql
+│   ├── 02_analysis_queries.sql
+│   ├── 03_advanced_analysis.sql
+│   └── 04_analytical_views.sql
 │
 └── screenshots/
     ├── database_overview.png
@@ -168,26 +220,17 @@ Olist_Ecommerce_SQL_Project/
 
 ## 📂 Dataset
 
-The original Olist CSV files are **not included in this repository**.
+The project uses the **Brazilian E-Commerce Public Dataset by Olist**.
 
-The project uses the Brazilian E-Commerce Public Dataset by Olist.
+The original CSV files are not included in this repository.
 
-## 🚀 Project Status
+## 🚀 Project Highlights
 
-- [x] PostgreSQL database created
-- [x] 9 database tables created
-- [x] Dataset imported
-- [x] Data validation completed
-- [x] Initial SQL analysis completed
-- [ ] Sales & revenue analysis
-- [ ] Product/category analysis
-- [ ] Seller analysis
-- [ ] Customer analysis
-- [ ] Payment analysis
-- [ ] Delivery analysis
-- [ ] Review analysis
-- [ ] Advanced SQL analysis
-- [ ] Final business insights
+- Designed a relational PostgreSQL database with 9 tables.
+- Loaded and validated more than 1 million records across the dataset.
+- Built SQL analyses covering sales, customers, products, sellers, payments, delivery, reviews, and geography.
+- Applied advanced SQL techniques including CTEs and window functions.
+- Created reusable analytical views for order, category, seller, and customer performance.
 
 ---
 
