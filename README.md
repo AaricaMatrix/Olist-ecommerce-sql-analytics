@@ -69,13 +69,13 @@ GEOLOCATION
 
 The PostgreSQL database was created and populated with the Olist dataset.
 
-![Database Overview](screenshots/database_overview.png)
+![Database Overview](Screenshots/database_overview.png)
 
 ## ✅ Data Validation
 
 All 9 tables were loaded and validated using PostgreSQL row-count checks.
 
-![Database Validation](screenshots/database_validation.png)
+![Database Validation](Screenshots/database_validation.png)
 
 | Table | Row Count |
 |---|---:|
@@ -95,13 +95,13 @@ All 9 tables were loaded and validated using PostgreSQL row-count checks.
 
 Orders were grouped by status to understand the order lifecycle.
 
-![Order Status Analysis](screenshots/order_status_analysis.png)
+![Order Status Analysis](Screenshots/order_status_analysis.png)
 
 ### Orders by Customer State
 
 A JOIN between `customers` and `orders` was used to analyze order volume across Brazilian states.
 
-![Orders by Customer State](screenshots/orders_by_state.png)
+![Orders by Customer State](Screenshots/orders_by_state.png)
 
 ## 📈 Business Analysis
 
